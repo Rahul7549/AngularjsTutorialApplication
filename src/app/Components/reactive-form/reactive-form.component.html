@@ -1,0 +1,53 @@
+
+<form [formGroup]="form" class="m-4">
+  <div class="form-group row">
+    <label for="exampleInputEmail1" class="col-sm-2 col-form-label">Email address</label>
+    <div class="col-sm-4">
+    <input type="email" class="form-control" formControlName="userName" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+    <div class="text-danger" *ngIf="userName?.touched">
+      <div *ngIf="userName?.errors?.required"> userName required</div>
+      <div *ngIf="userName?.errors?.minlength"> minimun length should be 4</div>
+      <div *ngIf="userName?.errors?.required"> userName required</div>
+      <div *ngIf="userName?.errors?.noSpace">no whiteSpace are allowed</div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-4">
+      <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <div class="text-danger" *ngIf="password?.touched">
+      <div *ngIf="password?.errors?.required"> userName required</div>
+      <div *ngIf="password?.errors?.minlength"> minimun length should be 4</div>
+      <div *ngIf="password?.errors?.required"> userName required</div>
+      <div *ngIf="password?.errors?.noSpace">no whiteSpace are allowed</div>
+    </div>
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Submit</button>
+</form>
+
+
+
+
+
+<!--
+<form [formGroup]="form">
+  <div class="form-group">
+    <label for="userName">Email</label>
+    <input type="text" id="userName" formControlName="userName">
+    <div class="text-danger" *ngIf="userName?.touched">
+      <div *ngIf="userName?.errors?.required"> userName required</div>
+      <div *ngIf="userName?.errors?.minlength"> minimun length should be 4</div>
+      <div *ngIf="userName?.errors?.required"> userName required</div>
+      <div *ngIf="userName?.errors?.noSpace">no whiteSpace are allowed</div>
+    </div>
+    </div>
+</form>
+
+ -->
+

@@ -3,6 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+   let component: AppComponent;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
@@ -32,4 +33,10 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.content span').textContent).toContain('TestingApp app is running!');
   });
+
+
+  it('TestingMetod() =>is nor returning expected Value',()=>{
+      expect(component.TestingMetod()).toBe(0)
+  })
+
 });
