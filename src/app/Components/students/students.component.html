@@ -1,8 +1,9 @@
-<div class="container row mt-5">
-<div class="" *ngFor="let student of students">
+<div class="container row mt-5 pt-5">
+<div class="" *ngFor="let student of students | sort:'age':'asc'">
   <div class="col col-lg-4">
       <img class="rounded-circle" [src]="student.profile" alt="Generic placeholder image" width="140" height="140">
-      <h2>Name: {{student.name |uppercase}}</h2>
+      <h2>Name: {{student.name}}</h2>
+      <p>Age: {{student.age}}</p>
       <p>grade: {{student.grade | number :'1.0-0'}}</p>
       <p>DOB: {{student.dob | date:'MM/dd/YY'}}</p>
   </div>
