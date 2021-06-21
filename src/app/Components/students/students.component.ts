@@ -1,4 +1,3 @@
-import { AppComponent } from './../../app.component';
 import { Component, Input, OnInit } from '@angular/core';
 import { student } from './../../app.component';
 

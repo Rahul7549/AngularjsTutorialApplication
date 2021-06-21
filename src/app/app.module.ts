@@ -7,6 +7,7 @@ import { ReactiveFormComponent } from './Components/reactive-form/reactive-form.
 import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './Components/header/header.component';
 import { StudentsComponent } from './Components/students/students.component';
+import { CustomSort } from './sort.pipe';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { StudentsComponent } from './Components/students/students.component';
     ReactiveFormComponent,
     HeaderComponent,
     StudentsComponent,
+    CustomSort
 
   ],
   imports: [
