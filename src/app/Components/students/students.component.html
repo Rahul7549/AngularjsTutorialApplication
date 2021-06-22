@@ -10,3 +10,21 @@
 </div>
 </div>
 
+<h1>elements and atribute directive ,hidden</h1>
+<div class="container row mt-5 pt-5">
+  <div class="" *ngFor="let student of students | sort:'age':'asc'">
+    <div class="col col-lg-4">
+      <img class="rounded-circle" [src]="student.profile" alt="Generic placeholder image" width="140" height="140">
+      <h2>Name: {{student.name}}</h2>
+      <p *ngIf="student.age>18"> Age is greater than 18</p>
+      <p *ngIf="student.grade>85 then good else otheropction">grade: {{student.grade }}</p>
+      <ng-template #good>Grade: Good</ng-template>
+      <ng-template #otheropction>
+        <p *ngIf="student.grade==85 else needimp" #match>Grade:match</p>
+        <ng-template #needimp>Grade:need improvements</ng-template>
+      </ng-template>
+      <p>DOB: {{student.dob | date:'MM/dd/YY'}}</p>
+      <p [hidden]="student.age>18">under age</p>
+    </div>
+  </div>
+</div>
