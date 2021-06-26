@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { element } from 'protractor';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import {observable, Observable} from 'rxjs';
 
 export interface student
 {
@@ -16,14 +18,25 @@ export interface student
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit,OnDestroy{
 
   title:String="TestingApp";
+  data$: Observable<String> = new Observable();
 
-  TestingMetod()
+  ngOnInit():void
   {
-  return 0;
+    this.data$=new Observable((observable)=>{
+      observable.next('rahul');
+    });
+    //  subscribeing Obervable
+    // this.data$.subscribe();
   }
+ngOnDestroy():void{
+
+  // this method will call to distroyed the element on distroying the ui
+
+}
+
 
   students:student[]=[
 
